@@ -74,6 +74,11 @@ const hardhatConfig = {
         balance,
       })),
     },
+    spark: {
+      url: 'https://rpc.fusespark.io',
+      chainId: 123,
+      accounts: [],
+    },
     ganache: {
       url: 'http://ganache:8545',
       accounts: {
