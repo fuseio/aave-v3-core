@@ -1,0 +1,20 @@
+# Foundry setup used only for the Fuse AaveManualOracle (deploy script + tests).
+# Hardhat remains the main toolchain for this repo; Foundry output goes to separate folders.
+[profile.default]
+src = 'contracts'
+test = 'test-foundry'
+script = 'script-foundry'
+out = 'out-foundry'
+cache_path = 'cache-foundry'
+libs = ['../aave-v3-origin/lib']
+remappings = ['forge-std/=../aave-v3-origin/lib/forge-std/src/']
+solc_version = '0.8.10'
+optimizer = true
+optimizer_runs = 100000
+evm_version = 'london'
+# Safe batch exports (script-foundry/BuildFuse*.s.sol)
+fs_permissions = [{ access = 'write', path = './safe-batches' }]
+
+[rpc_endpoints]
+fuse = 'https://rpc.fuse.io'
+fuse_archive = 'https://explorer-node.fuse.io/'
